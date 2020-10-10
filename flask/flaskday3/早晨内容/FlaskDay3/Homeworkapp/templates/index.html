@@ -11,6 +11,7 @@
                 $.ajax("/sex/"+choice_sex+"/",{
                     success:function (data) {
                         var sex_path = data["sex_path"];   // 接收后台发送来的选择的性别图片的路径
+                        alert(sex_path)
                         $("img#seximg").attr("src",sex_path);   // 动态修改src属性值
                     }
                 })

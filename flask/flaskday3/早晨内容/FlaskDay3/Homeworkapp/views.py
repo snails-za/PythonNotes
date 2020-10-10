@@ -15,3 +15,5 @@ def sex_view(choicesex):
     else:
         pic_path = url_for('static',filename='images/girl.jpg')
     return jsonify({"sex_path":pic_path})
+
+print(app.url_map)

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录页面</title>
+</head>
+<body>
+    <ol>
+    {% for msg in get_flashed_messages() %}
+         <h4 style="color:red"> <li> {{ msg }} </li> </h4>
+    {% endfor %}
+    </ol>
+    
+    <form action="{{ url_for('myblue.login_view') }}" method="post">
+        登录名：<input type="text" name="logname"/>  <br/>
+        登录密码：<input type="password" name="logpwd"/> <br/>
+        <input type="submit" value="登录"/>
+    </form>
+</body>
+</html>

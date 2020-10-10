@@ -1,0 +1,3 @@
+作业：
+    使用Flask-Restful完成一个“一对多”模型（eg:学校与学生）的GET与POST操作,
+    并且使用Flask-Restful完成删除学生(DELETE)和修改学生(PUT)的操作。

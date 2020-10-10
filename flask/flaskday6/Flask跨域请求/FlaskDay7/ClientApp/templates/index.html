@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <script type="text/javascript" src="{{ url_for('static',filename='js/jquery-3.1.1.js') }}"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("input#btn").click(function () {
+                $.ajax("http://localhost:8888/nice/",{
+                    success:function (data) {
+                        alert(data["msg"]);
+                    }
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+    <input type="button" value="发送Ajax跨域请求" id="btn"/>
+    <img src="http://localhost:8888/static/images/girl.jpg"
+        width="150px" height="150px"/>
+</body>
+</html>

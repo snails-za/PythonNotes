@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册页面</title>
+    <script type="text/javascript" src="{{ url_for('static',filename='js/jquery-3.1.1.js') }}"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("input#regname").blur(function () {    // 给文本框绑定一个blur事件（失去焦点事件）
+                var regname = $(this).val();   // 获取已经输入的注册用户名
+                $.ajax("/check/"+regname+"/",{
+                    success:function (data) {
+                          var $span = $("span#msg");
+                          var code=data["code"];
+                          var msg=data["msg"];
+                          if(code=="555"){
+                              $span.css("color","red").html(msg);
+                          }
+                          if(code=="666"){
+                              $span.css("color","green").html(msg);
+                          }
+                    }
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+    <form action="" method="post">
+        注册用户名：<input type="text" name="regname" id="regname"/> <span id="msg"></span> <br/>
+        注册密码：<input type="password" name="regpwd"/> <br/>
+    </form>
+</body>
+</html>

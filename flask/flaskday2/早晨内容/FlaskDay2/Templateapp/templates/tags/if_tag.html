@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>if模板标签</title>
+</head>
+<body>
+    <h3>您考了{{ stuscore }}分~~~</h3>
+    {% if stuscore >= 90 %}
+        <h3 style="color:green">优秀</h3>
+    {% elif stuscore >= 80 %}
+        <h3 style="color:pink">良好</h3>
+    {% elif stuscore >= 70 %}
+        <h3 style="color:grey">一般</h3>
+    {% elif stuscore >= 60 %}
+        <h3>及格</h3>
+    {% else %}
+        <h3 style="color:red">不及格，要加油！</h3>
+    {% endif %}
+</body>
+</html>
